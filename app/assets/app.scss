@@ -1,0 +1,101 @@
+@import "./base.scss";
+@import "./animation.scss";
+
+/* 750为基础设计稿 */
+/* 背景图片使用 ~imageBase/xxx.jps 路径， imageBase在webpack alias 设置 */
+.container {
+	width: 750px;
+	height: 100%;
+	background-repeat: no-repeat;
+	transform: scale3d(0);
+	background: #000;
+}
+
+.scene {
+	width: 100%;
+	height: 100%;
+}
+
+.music {
+	right: 0;
+	top: 10px;
+	z-index: 99;
+}
+
+.home {
+	.join {
+		left: 0;
+		right: 0;
+		margin: 0 auto;
+		bottom: 10%;
+	}
+}
+
+.page1 {
+	height: 100%;
+	position: relative;
+	width: 100%;
+	.content {
+		ul {
+			overflow: hidden;
+		}
+
+		li{
+			position: relative;
+			float: left;
+			padding: 20px 10px;
+			width: 33.33333333%;
+			box-sizing: border-box;
+		}
+	}
+}
+
+
+
+.luoPanel {
+	width: 550px;
+	height: 550px;
+	border-radius: 550px;
+	background: rgb(200,119,34);
+	top: 200px;
+	left: 100px;
+	position: absolute;
+
+	img {
+		width: 400px;
+		left:0;
+		right: 0;
+		top: 0;
+		bottom: 0;
+		position: absolute;
+		margin: auto auto;
+	}
+
+	$touchHeight: 200px;
+
+	p {
+		width: 100%;
+		position: absolute;
+		height: $touchHeight;
+		display: block;
+		background: #000;
+		opacity: 0.2;
+	}
+
+	.one { left: 0; z-index: 1;}
+	.two {
+		left: 0px; top: 0px;
+		transform: rotate(90deg);
+		transform-origin: 0px $touchHeight;
+		width: 65%;
+	}
+	.three { bottom: 0; z-index: 1;}
+	.four {
+		right: $touchHeight;
+		top: $touchHeight;
+		transform: rotate(-90deg);
+		transform-origin: 100% 0px;
+		background: rgb(204,20,126);
+		width: 65%;
+	}
+}

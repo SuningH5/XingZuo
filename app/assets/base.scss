@@ -1,0 +1,65 @@
+// Created by aotu 2017.
+/*======================================================================
+      Global
+  ======================================================================*/
+* {
+	margin: 0;
+	outline: none;
+	padding: 0;
+}
+
+html {
+	height: 100%;
+	font-family: "microsoft yahei", Arial, "Helvetica Neue", Helvetica, sans-serif;
+}
+
+body {
+	margin: 0 auto;
+	height: 100%;
+	overflow: hidden;
+}
+
+a {
+	text-decoration: none;
+}
+
+li {
+	list-style: none;
+}
+
+a,
+button,
+p,
+span {
+	-webkit-font-smoothing: antialiased;
+}
+
+input {
+	outline: none;
+}
+
+.clearfix {
+	zoom: 1;
+}
+
+.clearfix:after {
+	display: block;
+	visibility: hidden;
+	font-size: 0;
+	content: " ";
+	clear: both;
+	height: 0;
+}
+
+.pa {
+	position: absolute;
+}
+
+@font-face {
+	font-family: cityb;
+	src: url("../assets/fonts/cityb.ttf");
+}
+
+.fonts {
+	font-family: 'cityb';
+}
