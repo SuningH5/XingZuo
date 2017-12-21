@@ -18,6 +18,7 @@ module.exports = {
         // jQuery: false,
         $: true,
         wx: true,
+		particleground: true
     },
 
 	"plugins": [ "html" ],
@@ -30,7 +31,7 @@ module.exports = {
     },
 
     "rules": {
-        "indent": ["error", 'tab'],
+        "indent": ["error", 'tab', { "SwitchCase": 1 }],
 
         "linebreak-style": ["error","unix"],
 

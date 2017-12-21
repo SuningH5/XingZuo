@@ -77,7 +77,8 @@ webpackConfig.entry = {
 // --------------------------
 // Bundle Output
 // --------------------------
-const output_name    = 'js/[name].[hash].js';
+// const output_name    = 'js/[name].[hash].js';
+const output_name    = 'js/[name].js';
 
 webpackConfig.output = {
 	filename: output_name,
@@ -153,8 +154,8 @@ webpackConfig.module.loaders.push({
 
 webpackConfig.module.loaders.push(
 	{
-		test: /\.(png|jpg|gif)$/,
-		loader: 'url-loader?limit=10000&name=images/[hash][name].[ext]'
+		test: /\.(png|jpg|gif|mp3)$/,
+		loader: 'url-loader?limit=15000&name=images/[hash][name].[ext]'
 	},
 	{
 		test: /\.(ttf|otf|eot|svg|woff(2)?)(\?[a-z0-9]+)?$/,

@@ -7,7 +7,7 @@
     <meta name="apple-touch-fullscreen" content="no"/>
     <meta name="viewport" content="width=750">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
-    <title>HTML5 项目</title>
+    <title>十二星座财富音乐盒</title>
     <script src="https://cdn.staticfile.org/jquery/2.1.0/jquery.min.js" charset="utf-8"></script>
     <script type="text/javascript" src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
     <script>
@@ -44,46 +44,330 @@
         	});
 
         	wx.ready(function() {
+				wx.onMenuShareTimeline({
+					title: '十二星座财富音乐盒', // 分享标题
+					link: 'http://mercurymage.com/h5/20171211xz/',// 分享链接
+					imgUrl: 'http://mercurymage.com/h5/20171211xz/share.jpg', // 分享图标
+					success: function () {
+                        alert(111)
+					},
+					cancel: function () {
+					}
+				});
+
+				// 获取“分享给朋友”按钮点击状态及自定义分享内容接口
+				wx.onMenuShareAppMessage({
+					title: '十二星座财富音乐盒', // 分享标题
+					desc: '发财全靠命，理财全看运', // 分享描述
+					link: 'http://mercurymage.com/h5/20171211xz/',// 分享链接
+					imgUrl: 'http://mercurymage.com/h5/20171211xz/share.jpg', // 分享图标
+					type: '', // 分享类型,music、video或link，不填默认为link
+					dataUrl: '', // 如果type是music或video，则要提供数据链接，默认为空
+					success: function () {
+					},
+					cancel: function () {
+					}
+				});
+
 
         	});
         });
+
+    </script>
+    <script type="text/javascript">
+        var _hmt = _hmt || [];
+        (function() {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?5ab27dad1a63560d10877f1071a65c15";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+        })();
     </script>
 </head>
 <body>
   <!-- the class "content" is used for flexible plugin -->
-  <div class="container">
-	  <img src="./assets/images/music.png" class="pa music" alt="">
-	  <!-- <section class="home">
-  	  	<img src="./assets/images/home.jpg" width="100%" class="pa " alt="">
-		<img src="./assets/images/join-btn.png" class="pa join" alt="">
-  	  </section> -->
-
-	  <setion class="scene page1">
-	  	<div class="content">
-	  		<ul>
-	  			<li><img src="./assets/images/by.png" alt=""></li>
-	  			<li><img src="./assets/images/jn.png" alt=""></li>
-	  			<li><img src="./assets/images/sz.png" alt=""></li>
-	  			<li><img src="./assets/images/jx.png" alt=""></li>
-	  			<li><img src="./assets/images/shiz.png" alt=""></li>
-	  			<li><img src="./assets/images/cn.png" alt=""></li>
-	  			<li><img src="./assets/images/tp.png" alt=""></li>
-	  			<li><img src="./assets/images/tx.png" alt=""></li>
-	  			<li><img src="./assets/images/ss.png" alt=""></li>
-	  			<li><img src="./assets/images/mx.png" alt=""></li>
-	  			<li><img src="./assets/images/sp.png" alt=""></li>
-	  			<li><img src="./assets/images/sy.png" alt=""></li>
-	  		</ul>
-	  	</div>
-	  </setion>
-
-      <!-- <div class="luoPanel">
-  		<p class="one touch_block" date-type='top'>1</p>
-  		<p class="two touch_block" date-type='left'>2</p>
-  		<p class="three touch_block" date-type='bottom'>3</p>
-  		<p class="four touch_block" date-type='right'>4</p>
-  		<img src="./assets/images/Tomoe.png" class="disc" alt="">
-      </div> -->
+  <div class="loading-box scene pa" style="display:none;">
+  	<img src="./assets/images/loading-img.png" class="pa load-img margin-center" alt="">
+  	<img src="./assets/images/loading-1.png" class="pa load-img1" alt="">
+  	<img src="./assets/images/loading-2.png" class="pa load-img2 " alt="">
+  	<img src="./assets/images/loading-3.png" class="pa load-img3 " alt="">
+	<p class="loading-text pa margin-center">Loding...<span></span></p>
   </div>
+
+  <audio id="audio1" class="audio" autoplay loop></audio>
+
+  <div class="container" style="display:none;">
+	<div class="music-box">
+  		<img src="./assets/images/music.png" class="pa music" alt="">
+  		<img src="./assets/images/musiz-off.png" class="pa music music-off" alt="">
+  	</div>
+
+  	<section class="scene home">
+  		<img src="./assets/images/home.jpg" width="100%" class="pa " alt="">
+  		<img src="./assets/images/join-btn.png" class="pa join" alt="">
+  	</section>
+
+  	<setion class="scene page1" style="display: none;">
+  		<img src="./assets/images/page-bg.jpg" class="pa" alt="">
+  		<img src="./assets/images/logo.png" class="logo pa margin-center" alt="">
+  		<img src="./assets/images/back.png" class="back pa " alt="">
+
+  		<img src="./assets/images/select-xz.png" class="select pa margin-center" alt="">
+  		<img src="./assets/images/link-type.png" class="link-type pa margin-center" alt="">
+
+  		<div class="content pa select-box">
+  			<ul class="clearfix ">
+  				<li class="lefttop pa" data-type='by' data-text=''><img src="./assets/images/by.png"  alt=""></li>
+  				<li class="top pa" data-type='jn'><img src="./assets/images/jn.png" alt=""></li>
+  				<li class="righttop pa" data-type='sz'><img src="./assets/images/sz.png" alt=""></li>
+  				<li class="left pa" data-type='jx'><img src="./assets/images/jx.png" alt=""></li>
+  				<li class="center pa" data-type='shiz'><img src="./assets/images/shiz.png" alt=""></li>
+  				<li class="right pa" data-type='cn'><img src="./assets/images/cn.png" alt=""></li>
+  				<li class="left pa" data-type='tp'><img src="./assets/images/tp.png" alt=""></li>
+  				<li class="center pa" data-type='tx'><img src="./assets/images/tx.png" alt=""></li>
+  				<li class="right pa" data-type='ss'><img src="./assets/images/ss.png" alt=""></li>
+  				<li class="bottomleft pa" data-type='mx'><img src="./assets/images/mx.png" alt=""></li>
+  				<li class="center pa" data-type='sp'><img src="./assets/images/sp.png" alt=""></li>
+  				<li class="rightbottom pa" data-type='sy'><img src="./assets/images/sy.png" alt=""></li>
+  			</ul>
+  		</div>
+
+  		<div class="luoPanel">
+  			<!-- <p class="one touch_block" date-type='top'>1</p> -->
+  			<!-- <p class="two touch_block" date-type='left'>2</p> -->
+  			<!-- <p class="four touch_block" date-type='right'>4</p> -->
+  			<p class="three touch_block" date-type='bottom'>3</p>
+  			<img src="./assets/images/point.png" class="point" alt="">
+  			<img src="./assets/images/pan.png" class="disc" alt="">
+  			<img class="margin-center pa xz-type-logo" alt="">
+  			<div class="margin-center pa xz-type-text"></div>
+  		</div>
+
+        <div class="scene pan-tip pa active">
+            <img src="./assets/images/pan-tip.png" alt="">
+        </div>
+
+  		<img src="./assets/images/create-musiz-list.png" class="btn-create-musiz pa margin-center" alt="">
+  	</setion>
+
+  	<section class="pa scene page2" id='page2' style="display: none;">
+  		<img src="./assets/images/page2-bg.jpg" class="pa page2-bg" alt="">
+  		<img src="./assets/images/box.png" class="pa box " alt="">
+  		<img src="./assets/images/box-top.png" class="pa box-top" alt="">
+  		<img src="./assets/images/apen-box.png" class="pa apen-box" alt="">
+  		<img src="./assets/images/cover-open.png" class="pa cover-open" alt="">
+  		<img src="./assets/images/musiz-btn-fenx.png" class="pa create-musiz-success margin-center" alt="">
+  		<img src="./assets/images/call-friend.png" class="pa call-friend margin-center" alt="">
+
+  		<img src="./assets/images/back.png" class="back-to-pan pa " alt="">
+
+  		<img src="./assets/images/xinghe.png" class="pa xinghe" alt="">
+  		<img src="./assets/images/box-text.png" class="pa box-text margin-center" alt="">
+  		<img src="./assets/images/datiqing.gif" class="pa datiqing margin-center" alt="">
+
+  		<div class="xinghe-suip-box pa">
+  			<img src="./assets/images/suip-1.png" class="pa xinghe-suip sui1" alt="">
+  			<img src="./assets/images/suip-2.png" class="pa xinghe-suip sui2" alt="">
+  			<img src="./assets/images/suip-3.png" class="pa xinghe-suip sui3" alt="">
+  			<img src="./assets/images/suip-4.png" class="pa xinghe-suip sui4" alt="">
+  			<img src="./assets/images/suip-5.png" class="pa xinghe-suip sui5" alt="">
+  			<img src="./assets/images/suip-6.png" class="pa xinghe-suip sui6" alt="">
+  			<img src="./assets/images/suip-7.png" class="pa xinghe-suip sui7" alt="">
+  			<img src="./assets/images/suip-8.png" class="pa xinghe-suip sui8" alt="">
+  			<img src="./assets/images/suip-9.png" class="pa xinghe-suip sui9"  alt="">
+  			<img src="./assets/images/suip-10.png" class="pa xinghe-suip sui10" alt="">
+  			<img src="./assets/images/suip-11.png" class="pa xinghe-suip sui11" alt="">
+  			<img src="./assets/images/suip-12.png" class="pa xinghe-suip sui12" alt="">
+  			<img src="./assets/images/suip-13.png" class="pa xinghe-suip sui13" alt="">
+  			<img src="./assets/images/suip-14.png" class="pa xinghe-suip sui14" alt="">
+  			<img src="./assets/images/suip-15.png" class="pa xinghe-suip sui15" alt="">
+  			<img src="./assets/images/suip-16.png" class="pa xinghe-suip sui16" alt="">
+  			<img src="./assets/images/suip-17.png" class="pa xinghe-suip sui17" alt="">
+  			<img src="./assets/images/suip-18.png" class="pa xinghe-suip sui18" alt="">
+  			<img src="./assets/images/suip-19.png" class="pa xinghe-suip sui19" alt="">
+  			<img src="./assets/images/suip-20.png" class="pa xinghe-suip sui20" alt="">
+  			<img src="./assets/images/suip-21.png" class="pa xinghe-suip sui21" alt="">
+  			<img src="./assets/images/suip-22.png" class="pa xinghe-suip sui22" alt="">
+  		</div>
+
+  		<div class="caifu-table pa margin-center">
+  			<img src="./assets/images/caifu-bg.png" class="pa margin-center" alt="">
+  			<img  class="caifu-logo pa" alt="">
+  			<div class="xzType-text-title pa">null</div>
+  			<div class="xzType-text-body pa">喜欢嘻哈音乐的羊儿们耿直爽快，对生活充满了希望；喜欢谈笑风生，具有很强的社交能力。
+  理财时勇于接受各种挑战，敢于介入新兴行业，出手“快、狠、准”。投资理财这件事，在他们看来，与其说是赚钱，不如说是一种探险，他们享受过程中的美妙</div>
+
+  		</div>
+
+  		<div class="mx-box xingzuo-list">
+  			<img src="./assets/images/mx-title.png" class="pa xingzuo-title margin-center" alt="">
+  			<img src="./assets/images/fh-mx.png" class="pa fuhao" alt="">
+  			<img src="./assets/images/zs-men.png" class="pa zs-men" alt="">
+  			<img src="./assets/images/yq-mx.png" class="pa yueqi " alt="">
+  			<img src="./assets/images/zs-qq.png" class="pa zs-qq " alt="">
+  			<img src="./assets/images/zs-yf2.png" class="pa zs-yf2 " alt="">
+  			<img src="./assets/images/zs-yf.png" class="pa zs-yf" alt="">
+  		</div>
+
+  		<div class="tx-box xingzuo-list">
+  			<img src="./assets/images/tx-title.png" class="pa xingzuo-title margin-center" alt="">
+  			<img src="./assets/images/fh-tx.png" class="pa fuhao" alt="">
+  			<img src="./assets/images/zs-men.png" class="pa zs-men" alt="">
+  			<img src="./assets/images/yq-tx.png" class="pa yueqi " alt="">
+  			<img src="./assets/images/zs-qq.png" class="pa zs-qq " alt="">
+  			<img src="./assets/images/zs-yf2.png" class="pa zs-yf2 " alt="">
+  			<img src="./assets/images/zs-yf.png" class="pa zs-yf" alt="">
+  		</div>
+
+  		<div class="tp-box xingzuo-list">
+  			<img src="./assets/images/tp-title.png" class="pa xingzuo-title margin-center" alt="">
+  			<img src="./assets/images/fh-tp.png" class="pa fuhao" alt="">
+  			<img src="./assets/images/zs-men.png" class="pa zs-men" alt="">
+  			<img src="./assets/images/yq-tp.png" class="pa yueqi " alt="">
+  			<img src="./assets/images/zs-qq.png" class="pa zs-qq " alt="">
+  			<img src="./assets/images/zs-yf2.png" class="pa zs-yf2 " alt="">
+  			<img src="./assets/images/zs-yf.png" class="pa zs-yf" alt="">
+  			<img src="./assets/images/zs-link.png" class="pa zs-link" alt="">
+  		</div>
+
+  		<div class="sp-box xingzuo-list">
+  			<img src="./assets/images/sp-title.png" class="pa xingzuo-title margin-center" alt="">
+  			<img src="./assets/images/fh-sp.png" class="pa fuhao" alt="">
+  			<img src="./assets/images/zs-men.png" class="pa zs-men" alt="">
+  			<img src="./assets/images/yq-sp.png" class="pa yueqi " alt="">
+  			<img src="./assets/images/zs-qq.png" class="pa zs-qq " alt="">
+  			<img src="./assets/images/zs-yf2.png" class="pa zs-yf2 " alt="">
+  			<img src="./assets/images/zs-yf.png" class="pa zs-yf" alt="">
+  			<img src="./assets/images/zs-link.png" class="pa zs-link" alt="">
+  		</div>
+
+  		<div class="sz-box xingzuo-list">
+  			<img src="./assets/images/sz-title.png" class="pa xingzuo-title margin-center" alt="">
+  			<img src="./assets/images/fh-sz.png" class="pa fuhao" alt="">
+  			<img src="./assets/images/zs-men.png" class="pa zs-men" alt="">
+  			<img src="./assets/images/yq-sz.png" class="pa yueqi " alt="">
+  			<img src="./assets/images/zs-qq.png" class="pa zs-qq " alt="">
+  			<img src="./assets/images/zs-yf2.png" class="pa zs-yf2 " alt="">
+  			<img src="./assets/images/zs-yf.png" class="pa zs-yf" alt="">
+  			<img src="./assets/images/zs-link.png" class="pa zs-link" alt="">
+  		</div>
+
+  		<div class="shiz-box xingzuo-list">
+  			<img src="./assets/images/shiz-title.png" class="pa xingzuo-title margin-center" alt="">
+  			<img src="./assets/images/fh-shiz.png" class="pa fuhao" alt="">
+  			<img src="./assets/images/zs-men.png" class="pa zs-men" alt="">
+  			<img src="./assets/images/yq-shiz.png" class="pa yueqi " alt="">
+  			<img src="./assets/images/zs-qq.png" class="pa zs-qq " alt="">
+  			<img src="./assets/images/zs-yf2.png" class="pa zs-yf2 " alt="">
+  			<img src="./assets/images/zs-yf.png" class="pa zs-yf" alt="">
+  			<img src="./assets/images/zs-y.png" class="pa zs-link" alt="">
+  		</div>
+
+  		<div class="cn-box xingzuo-list">
+  			<img src="./assets/images/cn-title.png" class="pa xingzuo-title margin-center" alt="">
+  			<img src="./assets/images/fh-cn.png" class="pa fuhao" alt="">
+  			<img src="./assets/images/yq-cn.png" class="pa yueqi " alt="">
+  			<img src="./assets/images/zs-qq.png" class="pa zs-qq " alt="">
+  			<img src="./assets/images/zs-yf2.png" class="pa zs-yf2 " alt="">
+  			<img src="./assets/images/zs-yf.png" class="pa zs-yf" alt="">
+  			<img src="./assets/images/zs-y.png" class="pa zs-link" alt="">
+  			<img src="./assets/images/zs-yfu2.png" class="pa zs-yfu2" alt="">
+  		</div>
+
+  		<div class="ss-box xingzuo-list">
+  			<img src="./assets/images/ss-title.png" class="pa xingzuo-title margin-center" alt="">
+  			<img src="./assets/images/fh-ss.png" class="pa fuhao" alt="">
+  			<img src="./assets/images/yq-ss.png" class="pa yueqi " alt="">
+  			<img src="./assets/images/zs-qq.png" class="pa zs-qq " alt="">
+  			<img src="./assets/images/zs-yf2.png" class="pa zs-yf2 " alt="">
+  			<img src="./assets/images/zs-yf.png" class="pa zs-yf" alt="">
+  			<img src="./assets/images/zs-y.png" class="pa zs-link" alt="">
+  			<img src="./assets/images/zs-yfu2.png" class="pa zs-yfu2" alt="">
+  		</div>
+
+  		<div class="sy-box xingzuo-list">
+  			<img src="./assets/images/sy-title.png" class="pa xingzuo-title margin-center" alt="">
+  			<img src="./assets/images/fh-sy.png" class="pa fuhao" alt="">
+  			<img src="./assets/images/yq-sy.png" class="pa yueqi " alt="">
+  			<img src="./assets/images/zs-qq.png" class="pa zs-qq " alt="">
+  			<img src="./assets/images/zs-yf2.png" class="pa zs-yf2 " alt="">
+  			<img src="./assets/images/zs-yf.png" class="pa zs-yf" alt="">
+  			<img src="./assets/images/zs-y.png" class="pa zs-link" alt="">
+  			<img src="./assets/images/zs-men.png" class="pa zs-men" alt="">
+  			<img src="./assets/images/zs-yfu2.png" class="pa zs-yfu2" alt="">
+  		</div>
+
+  		<div class="jx-box xingzuo-list">
+  			<img src="./assets/images/jx-title.png" class="pa xingzuo-title margin-center" alt="">
+  			<img src="./assets/images/fh-jx.png" class="pa fuhao" alt="">
+  			<img src="./assets/images/yq-jx.png" class="pa yueqi " alt="">
+  			<img src="./assets/images/zs-qq.png" class="pa zs-qq " alt="">
+  			<img src="./assets/images/zs-yf2.png" class="pa zs-yf2 " alt="">
+  			<img src="./assets/images/zs-yf.png" class="pa zs-yf" alt="">
+  			<img src="./assets/images/zs-y.png" class="pa zs-link" alt="">
+  			<img src="./assets/images/zs-men.png" class="pa zs-men" alt="">
+  			<img src="./assets/images/zs-yfu2.png" class="pa zs-yfu2" alt="">
+  		</div>
+
+  		<div class="by-box xingzuo-list">
+  			<img src="./assets/images/by-title.png" class="pa xingzuo-title margin-center" alt="">
+  			<img src="./assets/images/fh-by.png" class="pa fuhao" alt="">
+  			<img src="./assets/images/yq-by.png" class="pa yueqi " alt="">
+  			<img src="./assets/images/zs-qq.png" class="pa zs-qq " alt="">
+  			<img src="./assets/images/zs-yf2.png" class="pa zs-yf2 " alt="">
+  			<img src="./assets/images/zs-yf.png" class="pa zs-yf" alt="">
+  			<img src="./assets/images/zs-y.png" class="pa zs-link" alt="">
+  			<img src="./assets/images/zs-men.png" class="pa zs-men" alt="">
+  			<img src="./assets/images/zs-yfu2.png" class="pa zs-yfu2" alt="">
+  		</div>
+
+  		<div class="jn-box xingzuo-list">
+  			<img src="./assets/images/jn-title.png" class="pa xingzuo-title margin-center" alt="">
+  			<img src="./assets/images/fh-jn.png" class="pa fuhao" alt="">
+  			<img src="./assets/images/yq-jn.png" class="pa yueqi " alt="">
+  			<img src="./assets/images/zs-qq.png" class="pa zs-qq " alt="">
+  			<img src="./assets/images/zs-yf2.png" class="pa zs-yf2 " alt="">
+  			<img src="./assets/images/zs-yf.png" class="pa zs-yf" alt="">
+  			<img src="./assets/images/zs-y.png" class="pa zs-link" alt="">
+  			<img src="./assets/images/zs-men.png" class="pa zs-men" alt="">
+  			<img src="./assets/images/zs-yfu2.png" class="pa zs-yfu2" alt="">
+  		</div>
+
+  	</section>
+
+  	<section class="pa scene page3" style="display:none">
+  		<div class="share-box" id="share-node">
+  			<img src="./assets/images/share-bg_01.jpg" class="bg" width="100%" alt="">
+  			<img src="./assets/images/share-bg_02.jpg" class="bg" width="100%" alt="">
+  			<img src="./assets/images/share-bg_03.jpg" class="bg" width="100%" alt="">
+  			<img src="./assets/images/share-bg_04.jpg" class="bg" width="100%" alt="">
+  			<img src="./assets/images/share-bg_05.jpg" class="bg" width="100%" alt="">
+  			<img src="./assets/images/share-bg_06.jpg" class="bg" width="100%" alt="">
+  			<img src="./assets/images/share-bg_07.jpg" class="bg" width="100%" alt="">
+  			<img src="./assets/images/share-bg_08.jpg" class="bg" width="100%" alt="">
+  			<img src="./assets/images/share-bg_09.jpg" class="bg" width="100%" alt="">
+  			<img src="./assets/images/share-bg_10.jpg" class="bg" width="100%" alt="">
+  			<img src="./assets/images/tx.png" class="pa share-logo" >
+  			<p class="pa user-name"></p>
+  			<h3 class="pa h3 name"></h3>
+  			<span class="pa title margin-center"></span>
+  			<span class="pa share-body margin-center"></span>
+  		</div>
+
+		<div class="createImg-box">
+
+		</div>
+
+  		<span class="pa bottom-title margin-center">请长按保存图片并分享朋友圈</span>
+  		<img src="./assets/images/share-btn.png" class="pa share-btn margin-center" alt="">
+  	</section>
+  </div>
+
+  <section class="share-tip-box pa scene" style="display:none; z-index:10000">
+	  <a class="pa btn back-refresh margin-center"></a>
+	  <a href="http://sale.suning.com/jr/ppjrr1222yrwap/index.html" class="pa btn goto-link margin-center"></a>
+	  <img src="./assets/images/share-tip.png" class="pa share-tip" alt="">
+
+  </section>
 </body>
 </html>

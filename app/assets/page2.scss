@@ -1,0 +1,757 @@
+.page2 {
+
+
+	.box-top {
+		top: 490px;
+		left: 100px;
+		z-index: 5;
+	}
+
+	.apen-box {
+		top: 654px;
+		left: 210px;
+		z-index: 5;
+		display: none;
+	}
+
+	.cover-open {
+		top: 461px;
+		left: 361px;
+		z-index: 3;
+		display: none;
+	}
+
+	.box-text {
+		bottom: 92px;
+		display: none;
+	}
+
+	.datiqing {
+		top: 534px;
+		z-index: 5;
+	}
+
+	.xinghe {
+		top: 170px;
+		left: 92px;
+		z-index: 11;
+		opacity: 0;
+		transform: translate3d(0, 160px, 0);
+		&.active {
+			opacity: 1;
+			transform: translate3d(0, 0px, 0);
+			transition: all 2s;
+		}
+	}
+
+	.caifu-logo {
+		width: 60px;
+		left: 337px;
+		top: 19px;
+		z-index: 30;
+	}
+
+	// 返回按钮
+	.back-to-pan {
+		top: -14px;
+		left: -20px;
+		z-index: 20;
+	}
+
+	// 财富表
+	.caifu-table {
+		top: 100px;
+		left: 20px;
+		z-index: 14;
+		position: relative;
+		opacity: 0;
+		transform: scale3d(0.1);
+		transform-origin: (50%, 50%);
+		transition: all 1s;
+		.xzType-text-title {
+			font-size: 40px;
+			color: #FFF;
+			top: 242px;
+			left: 420px;
+			color: #AB7C44;
+		}
+		.xzType-text-body {
+			font-size: 26px;
+			color: #FFF;
+			top: 320px;
+			left: 200px;
+			width: 340px;
+		}
+		&.active {
+			transform: scale3d(1);
+			opacity: 1;
+
+		}
+	}
+
+	.create-musiz-success {
+		bottom: 50px;
+		z-index: 5;
+		z-index: 13;
+	}
+
+	.call-friend {
+		bottom: 50px;
+		display: none;
+		z-index: 13;
+	}
+
+	.box {
+		top: 653px;
+		left: 210px;
+		z-index: 5;
+	}
+
+	.page2-bg {
+
+	}
+
+
+
+	.xingzuo-title {
+		top: 40px;
+		z-index: 10;
+	}
+
+	.zs-qq {
+		top: 364px;
+		left: 105px;
+		animation: shangxia 11s 0.1s infinite forwards;
+	}
+
+	.zs-men {
+		top: 214px;
+		left: 305px;
+		animation: xuanz 30s 0.1s infinite;
+	}
+
+	.zs-yf2 {
+		top: 344px;
+		left: 375px;
+		z-index:6;
+		animation: zuoyou 13s 0.1s infinite forwards;
+	}
+
+	.zs-yf {
+		top: 514px;
+		left: 235px;
+		z-index:6;
+		animation: zuoyou 11s 0.1s infinite forwards;
+	}
+
+
+	.yueqi {
+		z-index: 11;
+		opacity: 0;
+	}
+
+
+
+	.xinghe-suip-box {
+		z-index: 20;
+		top: 40px;
+		display: none;
+		perspective: 400px;
+		&.active {
+			animation: doudong 0.4s 0.8s 1;
+		}
+		.xinghe-suip {
+			transition: all 0.2s;
+		}
+		.sui1 { left: 335px; top: 305px;}
+		.sui2 { left: 275px; top: 371px;}
+		.sui3 { left: 275px; top: 390px;}
+		.sui4 { left: 275px; top: 478px;}
+		.sui5 { left: 348px; top: 396px;}
+		.sui6 { left: 346px; top: 478px;}
+		.sui7 { left: 276px; top: 482px;}
+		.sui8 { left: 312px; top: 502px;}
+		.sui9 { left: 348px; top: 508px;}
+		.sui10 { left: 318px; top: 542px;}
+		.sui11 { left: 349px; top: 554px;}
+		.sui12 { left: 350px; top: 592px;}
+		.sui13 { left: 375px; top: 312px;}
+		.sui14 { left: 375px; top: 384px;}
+		.sui15 { left: 375px; top: 385px;}
+		.sui16 { left: 432px; top: 447px;}
+		.sui17 { left: 373px; top: 447px;}
+		.sui18 { left: 375px; top: 433px;}
+		.sui19 { left: 375px; top: 480px;}
+		.sui20 { left: 375px; top: 480px;}
+		.sui21 { left: 375px; top: 511px;}
+		.sui22 { left: 377px; top: 542px;}
+	}
+
+
+
+	.xingzuo-list {
+		display: none;
+		&.active {
+			display: block;
+			.yueqi.active {
+				animation: slideInDown 2s 0.2s forwards;
+			}
+
+			.yueqi.leave {
+				animation: slideInUp 2s forwards;
+			}
+
+			.fuhao {
+				animation: show 5s infinite forwards;
+			}
+		}
+	}
+
+
+	// 魔蝎
+	.mx-box {
+		.fuhao {
+			top: 0px;
+			left: 380px;
+			transform: rotate(20deg) scale(0.68);
+		}
+
+		.yueqi {
+			top: 267px;
+			left: 225px;
+			z-index: 9;
+		}
+
+	}
+
+	// 天蝎
+	.tx-box {
+		.fuhao {
+			top: 30px;
+			left: 320px;
+			transform: scale(0.88);
+			transform: rotate(14deg);
+		}
+
+		.yueqi {
+			top: 257px;
+			left: 305px;
+			z-index: 9;
+		}
+
+	}
+	// 天平
+	.tp-box {
+		.yueqi {
+			top: 357px;
+			left: 235px;
+			z-index: 9;
+		}
+
+		.fuhao {
+			top: 100px;
+			left: 320px;
+			transform: scale(0.88);
+			transform: rotate(14deg);
+		}
+
+		.zs-yf {
+			left: 160px;
+		}
+
+		.zs-link {
+			top: 170px;
+			left: 140px;
+			animation: shangxia 12s infinite forwards;
+		}
+
+	}
+
+	// 水平
+	.sp-box {
+		.yueqi {
+			top: 177px;
+			left: 235px;
+			z-index: 9;
+		}
+
+		.fuhao {
+			top: 300px;
+			left: 420px;
+			transform: scale(0.88);
+			transform: rotate(14deg);
+		}
+
+		.zs-yf {
+			left: 160px;
+		}
+
+		.zs-link {
+			top: 170px;
+			left: 140px;
+			animation: shangxia 12s infinite forwards;
+		}
+
+	}
+
+	// 双子
+	.sz-box {
+		.yueqi {
+			top: 147px;
+			left: 145px;
+			z-index: 9;
+		}
+
+		.fuhao {
+			top: 300px;
+			left: 420px;
+			transform: rotate(-60deg) scale(0.88);
+		}
+
+		.zs-yf {
+			left: 160px;
+		}
+
+		.zs-link {
+			top: 170px;
+			left: 140px;
+			animation: shangxia 12s infinite forwards;
+		}
+
+	}
+
+	// 狮子
+	.shiz-box {
+		.yueqi {
+			top: 147px;
+			left: 245px;
+			z-index: 9;
+		}
+
+		.fuhao {
+			top: 100px;
+			left: 220px;
+			transform: rotate(0deg) scale(0.88);
+		}
+		.zs-link {
+			top: 170px;
+			left: 140px;
+			animation: shangxia 12s infinite forwards;
+		}
+	}
+
+	// 处女
+	.cn-box {
+		.yueqi {
+			top: 147px;
+			left: 245px;
+			z-index: 9;
+		}
+
+		.fuhao {
+			top: 100px;
+			left: 430px;
+			transform: rotate(0deg) scale(0.88);
+		}
+		.zs-link {
+			top: 170px;
+			left: 140px;
+			animation: shangxia 12s infinite forwards;
+		}
+
+		.zs-yfu2 {
+			top: 500px;
+			right: 100px;
+			animation: fudong 7s infinite forwards;
+		}
+	}
+
+	// 射手
+	.ss-box {
+		.yueqi {
+			top: 230px;
+			left: 245px;
+			z-index: 9;
+		}
+
+		.fuhao {
+			top: 100px;
+			left: 330px;
+			transform: rotate(0deg) scale(0.88);
+		}
+		.zs-link {
+			top: 170px;
+			left: 140px;
+			animation: shangxia 12s infinite forwards;
+		}
+
+		.zs-yfu2 {
+			top: 500px;
+			right: 100px;
+			animation: fudong 7s infinite forwards;
+		}
+	}
+
+	// 双鱼
+	.sy-box {
+		.yueqi {
+			top: 203px;
+			left: 122px;
+			z-index: 9;
+		}
+
+		.fuhao {
+			top: 133px;
+			left: 458px;
+			transform: rotate(0deg) scale(0.88);
+		}
+
+		.zs-yfu2 {
+			top: 500px;
+			right: 100px;
+			animation: fudong 7s infinite forwards;
+		}
+
+		.zs-link {
+			top: 170px;
+			left: 340px;
+			animation: shangxia 12s infinite forwards;
+		}
+
+	}
+
+	// 巨蟹
+	.jx-box {
+		.yueqi {
+			top: 130px;
+			left: 206px;
+			z-index: 9;
+		}
+		.za-men {
+			top: 214px;
+			left: 275px;
+		}
+
+		.fuhao {
+			top: 133px;
+			left: 458px;
+			transform: rotate(0deg) scale(0.88);
+		}
+
+		.zs-yfu2 {
+			top: 500px;
+			right: 100px;
+			animation: fudong 7s infinite forwards;
+		}
+
+		.zs-link {
+			top: 170px;
+			left: 340px;
+			animation: shangxia 12s infinite forwards;
+		}
+	}
+
+	// 白羊
+	.by-box {
+		.yueqi {
+			top: 210px;
+			left: 119px;
+			z-index: 9;
+		}
+		.za-men {
+			top: 214px;
+			left: 275px;
+		}
+
+		.fuhao {
+			top: 133px;
+			left: 408px;
+			transform: rotate(0deg) scale(0.88);
+		}
+
+		.zs-yfu2 {
+			top: 500px;
+			right: 100px;
+			animation: fudong 7s infinite forwards;
+		}
+
+		.zs-link {
+			top: 170px;
+			left: 340px;
+			animation: shangxia 12s infinite forwards;
+		}
+	}
+
+	// 金牛
+	.jn-box {
+		.yueqi {
+			top: 157px;
+			left: 153px;
+			z-index: 9;
+		}
+		.za-men {
+			top: 214px;
+			left: 275px;
+		}
+
+		.fuhao {
+			top: 133px;
+			left: 408px;
+			transform: rotate(0deg) scale(0.88);
+		}
+
+		.zs-yfu2 {
+			top: 500px;
+			right: 100px;
+			animation: fudong 7s infinite forwards;
+		}
+
+		.zs-link {
+			top: 170px;
+			left: 340px;
+			animation: shangxia 12s infinite forwards;
+		}
+	}
+
+
+}
+
+@keyframes fudong {
+	0% {
+		transform: translate3d(0, 0, 0);
+	}
+
+	50% {
+		transform: translate3d(50px, 0, 0);
+	}
+
+	100% {
+		transform: translate3d(0, 0, 0);
+	}
+}
+
+@keyframes shangxia {
+	0% {
+		transform: translate3d(0, 0, 0);
+	}
+
+	50% {
+		transform: translate3d(0px, 50px, 0);
+	}
+
+	100% {
+		transform: translate3d(0, 0, 0);
+	}
+}
+
+@keyframes zuoyou {
+	0% {
+		transform: translate3d(0, 0, 0);
+	}
+
+	50% {
+		transform: translate3d(0px, -30px, 0);
+	}
+
+	100% {
+		transform: translate3d(0, 0, 0);
+	}
+}
+
+@keyframes xuanz {
+	from {
+		transform: rotate(0deg);
+	}
+
+	to {
+		transform: rotate(360deg);
+	}
+}
+
+@keyframes show {
+	0% {
+		opacity: 0;
+	}
+
+	50% {
+		opacity: 1;
+	}
+
+	100% {
+		opacity: 0;
+	}
+}
+
+@keyframes slideInDown {
+	0% {
+		transform: translate3d(0, -30%, 0);
+	}
+	100% {
+		opacity: 1;
+		transform: translate3d(0, 0, 0)
+	}
+}
+
+@keyframes slideInUp {
+	0% {
+		opacity: 1;
+		transform: translate3d(0, 0%, 0);
+	}
+	100% {
+		opacity: 0;
+		transform: translate3d(0, -30%, 0)
+	}
+}
+
+@keyframes doudong {
+	2% {
+		transform: translate(-.5px, .5px) rotate(-.5deg);
+	}
+	4% {
+		transform: translate(2.5px, .5px) rotate(-.5deg);
+	}
+	6% {
+		transform: translate(-.5px, 1.5px) rotate(1.5deg);
+	}
+	8% {
+		transform: translate(.5px, .5px) rotate(-.5deg);
+	}
+	10% {
+		transform: translate(-.5px, -1.5px) rotate(-.5deg);
+	}
+	12% {
+		transform: translate(.5px, -.5px) rotate(1.5deg);
+	}
+	14% {
+		transform: translate(1.5px, 2.5px) rotate(-.5deg);
+	}
+	16% {
+		transform: translate(-.5px, -.5px) rotate(.5deg);
+	}
+	18% {
+		transform: translate(2.5px, .5px) rotate(.5deg);
+	}
+	20% {
+		transform: translate(.5px, -1.5px) rotate(-.5deg);
+	}
+	22% {
+		transform: translate(2.5px, 2.5px) rotate(-.5deg);
+	}
+	24% {
+		transform: translate(2.5px, 1.5px) rotate(1.5deg);
+	}
+	26% {
+		transform: translate(.5px, 1.5px) rotate(-.5deg);
+	}
+	28% {
+		transform: translate(1.5px, .5px) rotate(.5deg);
+	}
+	30% {
+		transform: translate(-1.5px, 2.5px) rotate(1.5deg);
+	}
+	32% {
+		transform: translate(.5px, .5px) rotate(.5deg);
+	}
+	34% {
+		transform: translate(.5px, 1.5px) rotate(1.5deg);
+	}
+	36% {
+		transform: translate(2.5px, -.5px) rotate(1.5deg);
+	}
+	38% {
+		transform: translate(.5px, 1.5px) rotate(1.5deg);
+	}
+	40% {
+		transform: translate(2.5px, 1.5px) rotate(1.5deg);
+	}
+	42% {
+		transform: translate(2.5px, -1.5px) rotate(.5deg);
+	}
+	44% {
+		transform: translate(.5px, -.5px) rotate(.5deg);
+	}
+	46% {
+		transform: translate(1.5px, -1.5px) rotate(.5deg);
+	}
+	48% {
+		transform: translate(-1.5px, -.5px) rotate(.5deg);
+	}
+	50% {
+		transform: translate(2.5px, -1.5px) rotate(1.5deg);
+	}
+	52% {
+		transform: translate(.5px, 1.5px) rotate(.5deg);
+	}
+	54% {
+		transform: translate(2.5px, -.5px) rotate(.5deg);
+	}
+	56% {
+		transform: translate(2.5px, 2.5px) rotate(.5deg);
+	}
+	58% {
+		transform: translate(2.5px, 1.5px) rotate(-.5deg);
+	}
+	60% {
+		transform: translate(1.5px, 1.5px) rotate(-.5deg);
+	}
+	62% {
+		transform: translate(-.5px, .5px) rotate(-.5deg);
+	}
+	64% {
+		transform: translate(2.5px, 1.5px) rotate(-.5deg);
+	}
+	66% {
+		transform: translate(-1.5px, .5px) rotate(1.5deg);
+	}
+	68% {
+		transform: translate(1.5px, -1.5px) rotate(.5deg);
+	}
+	70% {
+		transform: translate(.5px, .5px) rotate(-.5deg);
+	}
+	72% {
+		transform: translate(-.5px, 1.5px) rotate(1.5deg);
+	}
+	74% {
+		transform: translate(-1.5px, 1.5px) rotate(1.5deg);
+	}
+	76% {
+		transform: translate(2.5px, -.5px) rotate(.5deg);
+	}
+	78% {
+		transform: translate(2.5px, 2.5px) rotate(.5deg);
+	}
+	80% {
+		transform: translate(-1.5px, 2.5px) rotate(.5deg);
+	}
+	82% {
+		transform: translate(-1.5px, -.5px) rotate(.5deg);
+	}
+	84% {
+		transform: translate(.5px, 1.5px) rotate(-.5deg);
+	}
+	86% {
+		transform: translate(-.5px, 2.5px) rotate(.5deg);
+	}
+	88% {
+		transform: translate(2.5px, 2.5px) rotate(1.5deg);
+	}
+	90% {
+		transform: translate(-.5px, -1.5px) rotate(-.5deg);
+	}
+	92% {
+		transform: translate(1.5px, .5px) rotate(.5deg);
+		}
+	94% {
+		transform: translate(-.5px, -.5px) rotate(.5deg);
+	}
+	96% {
+		transform: translate(1.5px, .5px) rotate(1.5deg);
+	}
+	98% {
+		transform: translate(.5px, -.5px) rotate(1.5deg);
+	}
+	0%, 100% {
+		transform: translate(0, 0) rotate(0);
+	}
+}

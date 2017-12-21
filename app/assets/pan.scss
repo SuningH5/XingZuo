@@ -1,0 +1,83 @@
+// 罗盘 ------------------------------------------
+.luoPanel {
+	width: 600px;
+	height: 600px;
+	top: 300px;
+	left: 0;
+	right: 0;
+	margin: 0 auto;
+	position: absolute;
+	z-index: 10;
+	transform: scale(0);
+	transition: all 1s;
+	display: none;
+
+	&.active {
+		display: block;
+		transform: scale(1);
+		opacity: 1;
+	}
+
+	.disc {
+		width: 600px;
+		left:0;
+		right: 0;
+		top: 0;
+		bottom: 0;
+		position: absolute;
+		margin: auto auto;
+	}
+
+	$touchHeight: 330px;
+
+	.touch_block {
+		width: 100%;
+		position: absolute;
+		height: $touchHeight;
+		display: block;
+		background: #000;
+		opacity: 0;
+		transition: all 0.1s;
+	}
+
+	.one { left: 0; z-index: 1;}
+	.two {
+		left: 0px; top: 0px;
+		transform: rotate(90deg);
+		transform-origin: 0px $touchHeight;
+		width: 65%;
+	}
+	.three { bottom: 0; z-index: 1;}
+	.four {
+		right: $touchHeight;
+		top: $touchHeight;
+		transform: rotate(-90deg);
+		transform-origin: 100% 0px;
+		background: rgb(204,20,126);
+		width: 65%;
+	}
+
+	.point {
+		position: absolute;
+		left: 0;
+		right: 0;
+		margin: 0 auto;
+		top: 130px;
+		z-index: 2;
+	}
+
+	.xz-type-text {
+		top: -80px;
+		z-index: 10;
+		font-size: 40px;
+		color: #FFF;
+		text-align: center;
+	}
+
+	.xz-type-logo {
+		width: 82px;
+		top: 250px;
+		z-index: 11;
+	}
+}
+// ------------------------------------------

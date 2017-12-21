@@ -1,0 +1,127 @@
+.page3 {
+	display: none;
+	overflow: hidden;
+	transition: all 2s;
+	opacity: 0;
+	transform: scale(0.4) translate3d(0, -100px, 0);
+	&.active{
+		opacity: 1;
+		transform: scale(1) translate3d(0, 0px, 0);
+	}
+
+	.share-box {
+		position: relative;
+		width: 750px;
+		height: 1206px;
+		overflow: hidden;
+	}
+
+	.share-logo {
+		top: 50px;
+		left: 340px;
+		width: 80px;
+	}
+
+	.bg {
+		display: block;
+		top: 50px;
+	}
+
+	.share-user-head {
+		top: 268px;
+		left: 245px;
+		width: 80px;
+		border-radius: 4px;
+	}
+
+	.user-name {
+		top: 251px;
+		left: 238px;
+		color: #AB7C44;
+		font-weight: bold;
+		font-size: 33px;
+	}
+
+	h3 {
+		top: 172px;
+		left: 287px;
+		font-size: 33px;
+		color: #AB7C44;
+		font-weight: bold;
+	}
+
+	.title {
+		color: #AB7C44;
+		top: 305px;
+		display: block;
+		text-align: center;
+		font-weight: bold;
+		font-size: 33px;
+	}
+
+	.share-body {
+		position: absolute;
+		width: 390px;
+		font-size: 28px;
+		display: block;
+		top: 394px;
+		left: 26px;
+		color: #FFF;
+	}
+
+	.createImg-box{
+		position: absolute;
+		top: 0;
+		left: 0;
+	}
+
+	.share-btn {
+		bottom: 40px;
+		z-index: 10;
+	}
+
+	.bottom-title {
+		z-index: 10;
+		bottom: 150px;
+		text-align: center;
+		font-size: 16px;
+		font-size: 24px;
+		color: #FFF;
+	}
+
+	canvas {
+		position: absolute;
+		top: 0px;
+		left: 0px;
+		z-index: 9;
+	}
+}
+
+@-webkit-keyframes bounceInDown {
+	0%, 100%, 60%, 75%, 90% {
+		-webkit-transition-timing-function: cubic-bezier(0.215, .61, .355, 1);
+		transition-timing-function: cubic-bezier(0.215, .61, .355, 1)
+	}
+	0% {
+		opacity: 0;
+		-webkit-transform: translate3d(0, -3000px, 0);
+		transform: translate3d(0, -3000px, 0)
+	}
+	60% {
+		opacity: 1;
+		-webkit-transform: translate3d(0, 25px, 0);
+		transform: translate3d(0, 25px, 0)
+	}
+	75% {
+		-webkit-transform: translate3d(0, -10px, 0);
+		transform: translate3d(0, -10px, 0)
+	}
+	90% {
+		-webkit-transform: translate3d(0, 5px, 0);
+		transform: translate3d(0, 5px, 0)
+	}
+	100% {
+		-webkit-transform: none;
+		transform: none
+	}
+	}
